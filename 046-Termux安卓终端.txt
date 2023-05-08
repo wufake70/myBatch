@@ -1,0 +1,17 @@
+一、初始设置
+	termux-change-repo	修改软件源
+	termux-setup-storage	访问储存
+
+二、使用ssh远程
+	pkg install openssh	下载openssh
+	pkg install openssl	下载openssl
+	passwd			设置/修改密码
+	sshd			启动sshd服务
+	ssh ip -p
+
+	常遇问题: 
+		在启动 sshd服务（作为服务端）时，报错"no hostkeys available -exiting." 即 "没有可用的主机密钥"
+			解决方法: "ssh-keygen -A" 生成密钥
+		在连接 该服务时 报错"ssh: Could not resolve hostname 192.1xxxx port 22: Connection refused"
+			可以使用 ping 来检查 两台主机是否可以通信
+			也可能 端口被占用了，服务端 使用 "sshd -p xxx" 切换端口

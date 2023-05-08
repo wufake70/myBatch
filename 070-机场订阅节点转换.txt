@@ -1,0 +1,29 @@
+机场订阅节点(格式)转换:
+	clash<===>v2ray,.......
+
+	在线节点转换 url： https://acl4ssr-sub.github.io/
+
+	当订阅链接，无法直接获取 其节点信息，访问得到是一个 base64编码的节点组链接，
+	我们可以 将其 对应解码，就得到
+	类似: "ss://YWVzLTI1Ni1nY206OTU2NTRiMTUtOGQxMS00MDk0L......"，单个节点链接
+
+	此时，使用 在线转换平台，将上面 解码的 单个或多个 节点链接 导入对应编辑框(不宜全部导入,get请求有限),
+	客户端 选中 目标软件格式，
+	其他 参数 默认即可
+
+	使用 在线web 转换 缺点:
+		节点 可能被盗
+		转换的数量有限
+		直链平台不好找
+		不稳定
+	
+	使用 本地web 转换:
+		访问  https://github.com/tindy2013/subconverter/releases
+		对应 下载 subconverter_win64.7z 并解压 ，在运行 subconver.exe
+		再次访问 https://acl4ssr-sub.github.io/，
+		后端地址 选择 "localhost:25500 本地版"
+		同上
+	
+	
+	
+	

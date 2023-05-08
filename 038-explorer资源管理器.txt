@@ -1,0 +1,4 @@
+打开指定路径 资源管理器
+explorer "指定路径"
+
+taskkill /fi "imagename eq explorer" /f		关闭桌面模式

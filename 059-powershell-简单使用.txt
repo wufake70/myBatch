@@ -1,0 +1,33 @@
+一、
+	powershell命令  可不区分大小写
+	
+	$+变量名	变量标识符
+	"、'		可包围 字符串,区别是 " 双引号里的如果存在变量可以替换，' 单引号不可以 
+	`n,`t,`a	换行，制表，重音符
+	$_		对象占位符
+	%		foreach-object别名或者 取余
+	#		注释作用
+
+	{...}		脚本快
+	;		命令行以分号结尾
+	$say={echo hi}	创建脚本块(函数)
+	$say		打印脚本块的内容
+	&$say		脚本块的调用
+
+	get-clipboad	获取剪贴板内容
+	get-content .. 	读取文本数据
+
+	write-host		输入出字符串
+		-foregroundcolor	字体颜色
+		-backgroundcolor	背景颜色
+
+二、在dos中 直接使用 ps一些命令的格式:		
+	含有中文字符时必须要有 双引号
+		powershell -command “".... " 	
+		powershell "... '...' ..." 简写 
+
+
+
+
+
+

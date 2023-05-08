@@ -1,0 +1,21 @@
+一、win注册表
+	Windows注册表是Windows操作系统中用于存储系统设置、配置信息、应用程序和组件的一个重要的数据库。
+	它可以被认为是Windows操作系统的核心组成部分之一
+	
+
+二、增加 add
+	reg add "路径" /v ... /d ... /f ...
+		/v 	值的名称 value
+		/d	值的数据 data
+		/f 	不用提示强制覆盖 force
+
+		/t	值的类型 type
+			REG_SZ		字符串
+			REG_DWORD	32位整数
+			REG_QWORD	64位整数
+			REG_BINARY	二进制
+
+	例子:
+		停用代理
+		reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v ProxyEnable /t REG_DWORD /d 0 /f
+

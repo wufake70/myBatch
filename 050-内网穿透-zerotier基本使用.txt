@@ -1,0 +1,21 @@
+1.官网 www.zerotier.com 注册账号
+2.点击 "create a network" 创建网络（相当于 大局域网），注意 网络id
+3.点击 并 设置该网络 
+4."Access Control" 访问选择
+	private: 需要在对应的控制台 添加 入网设备 才能连入 该大局域网
+	public: 任何设备 都可以(不要超限制)
+5."IPv4 Auto-Assign" ipv4自动分配，选择一个 ipv4 的ip地址网段
+6." Members" 成员
+	在 各个设备 下载 对应 zerotier软件，通过 网络id 加入到 这个 大局域网中；
+	然后 在控制台 选中即可；
+	每个连入 该大局域网的设备 都有一个 虚拟的ip地址
+
+7.可以使用ping 测试是否连接
+
+====================
+linux 安装 zerotier
+	1.下载 并安装 "curl -s https://install.zerotier.com | sudo bash"
+	2.加入大局域网 "sudo zerotier-cli join 网络id"
+	3.启动服务 "systemctl start zerotier-one"
+
+

@@ -1,0 +1,26 @@
+更改 cmd.exe 命令提示符。
+PROMPT [text]
+  text    指定新的命令提示符。
+提示符可以由普通字符及下列特殊代码组成:
+  $A   & (与号)
+  $B   | (坚线)
+  $C   ( (左括号)
+  $D   当前日期
+  $E   转义码(ASCII 码 27)
+  $F   ) (右括号)
+  $G   > (大于号)
+  $H   Backspace (删除前一个字符)
+  $L   < (小于号)
+  $N   当前驱动器
+  $P   当前驱动器及路径			即 C:\Users\yui>
+  $Q   = (等号)
+  $S     (空格)
+  $T   当前时间
+  $V   Windows 版本号
+  $_   回车换行符
+  $$   $ (美元符号)
+
+如: prompt $p$g$g$g		即 C:\Users\yui>>>
+    prompt $g$g$g			即 >>>
+也可通过：
+set prompt=$g$g$g			来设置命令提示符

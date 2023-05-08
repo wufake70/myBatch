@@ -1,0 +1,11 @@
+@echo off > 018_nul.txt  可用于新建一个txt文件
+nul的用法：
+1. > nul； 是屏蔽标准输出再屏幕上的显示
+eg：
+timeout 9 > nul
+
+2. 2 > nul; 屏蔽错误的命令，对的依然可以显示，
+eg:
+dirr 2 > nul
+
+3.

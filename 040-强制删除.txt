@@ -1,0 +1,26 @@
+1.如无法 删除 "该文件已在某个程序中打开"。
+  使用 命令 "del /F /A /Q 文件路径名"
+
+2.如 显示 "该文件已在xxx程序中打开"
+	tasklist | findstr xxx		获取pid
+	taskkill /fi "pid eq pid" /f
+	del /s /q ....
+
+
+3.重启自动运行删除
+	"rd /s /q .\" 
+
+	
+	将以上代码写入bat文件
+
+
+
+"""
+del /F /A /Q \\?\%1
+rd /s /Q \\?\%1
+
+
+"""
+
+
+

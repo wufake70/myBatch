@@ -1,0 +1,7 @@
+curl ifconfig.me		返回公网IP
+curl www.google.com	可以用来测试是否真全局上网
+
+curl 命令
+	-O 	-remote-name	服务器上文件的名字
+	-o	自定义输出的文件名字
+	-L	-L参数的作用是让curl自动跟随重定向。

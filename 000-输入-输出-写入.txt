@@ -1,0 +1,11 @@
+输入
+	使用“set /p a=”接收用户输入的数据
+
+输出
+	echo .....
+
+写入(单行)
+	echo ..... > file.xxx
+
+写入(多行)
+	（echo ...&echo ....&echo ...）> file.xxx

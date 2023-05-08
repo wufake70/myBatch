@@ -1,0 +1,6 @@
+schtasks /create /tn a /tr calc.exe /sc once /st 17:11
+/create 创建一个任务
+/tn 为这个任务起名字
+/tr 这个任务的程序
+/sc 计划频率
+/st 开始时间

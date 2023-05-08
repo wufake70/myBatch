@@ -1,0 +1,5 @@
+一、常用的路径:
+	自动运行的程序和服务
+		用户 HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run
+		系统 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+	

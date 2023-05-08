@@ -1,0 +1,10 @@
+net user				查看所有用户
+以下 需管理权限
+net user <username> ****	修改用户密码(管理权限)
+net user test *** /add		新添账户
+net user test /del		删除账户
+net localgroup administrators test /add	加入管理员组
+
+net start sshd			开启sshd服务
+net stop ...			关闭服务
+sc config <service name> start= auto，开机自启服务

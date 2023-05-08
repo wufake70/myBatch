@@ -1,0 +1,12 @@
+1.运行 "regedit" 注册表
+2.定位到 路径"计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Classes\lnkfile"
+3.将 "IsShortcut" 删除 (会影响 任务栏软件无法直接打开,直接管理员运行 delete-shortcut.bat)
+
+4.运行 
+	"cmd /k reg delete "HKEY_CLASSES_ROOT\lnkfile" /v IsShortcut /f & taskkill /f /im explorer.exe & start explorer.exe"
+
+
+
+===================恢复
+
+	

@@ -1,0 +1,5 @@
+ 1. Create:  tar -cf <archive-filename> [filenames...]
+压缩文件 （archive 存档）
+
+2. Extract: tar -xf <archive-filename>
+解压文件 

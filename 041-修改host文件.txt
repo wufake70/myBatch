@@ -1,0 +1,4 @@
+host文件路径 C:\Windows\System32\drivers\etc
+
+作用: 相当于给某个 ip取一个 容易记住的名字(域名,别名)，只在 内网有用
+格式: xx.xx.xx.xx 别名 域名

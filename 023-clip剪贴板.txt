@@ -1,0 +1,9 @@
+dir | clip				将当前路径下的文件 保存到剪贴板上
+
+clip < ***.txt(输入重定向)
+
+echo hello world > clip		将"hello world" 粘贴到 剪贴板
+
+# 获取剪贴内容
+powershell -command "get-clipboard"
+	

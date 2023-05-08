@@ -1,0 +1,42 @@
+*		通配任意长度字符
+?		通配一个任意字符
+@ 		关闭执行命令的显示 ，只对一行有作用
+pushd		将当前目录推入目录堆栈
+popd		切换到上次pushd保存的目录中
+echo off	关闭执行命令的显示，
+echo on 	开启执行命令的显示 、
+echo.		相当于 换行和 回车
+ren		修改文件名字		
+time		显示当前时间，设置新世间
+date		同上
+rem		该脚本语言的注释
+pause		避免脚本一闪而过
+cls		清屏
+calc		计算器
+notepad	记事本
+write		写字板
+mspaint	画板
+::   		用于注释
+taskmgr	任务管理器
+control	控制面板
+win+s		全局搜索
+WMI		WindowsManagement Instrumentation 命令行实用工具
+wmic		使用该命令后(在使用 cpu get numberofcores) 可以查看 cpu核心数
+doskey	设置命令 的别名	
+systeminfo	查看系统信息	
+timeout	设置延迟，/t 指定时间(s)
+pause > nul	去除提示的字符
+
+services.msc	查看本地服务
+
+==========================
+win + s	全局搜索框 输入 "cmd",右键 "以管理员身份运行"
+runas /user:administrator cmd	以管理员权限运行 cmd程序，
+					报错: “用户帐户限制阻止了此用户进行登录。例如：不允许使用空密码，登录次数的限制，或强制实施的某个策略限制。”
+						1."运行" 输入 gpedit.msc 打开 "本地组策略编辑器",	
+						2.计算机配置-> Windows设置-> 安全设置-> 本地策略-> 安全选项
+						3.找到 "管理员账户状态" 并设置为 "已启用"
+
+cmd /c ".."	执行字符串指令,并结束
+
+

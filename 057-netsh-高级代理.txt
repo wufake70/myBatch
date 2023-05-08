@@ -1,0 +1,30 @@
+netsh winhttp set advproxy setting-scop=user settings-file=....xx.json
+	advproxy		高级代理
+	setting-scope	范围scope user表示 为当前用户，不过需要提权
+	settings-file	配置好的json文件
+	
+	json文件格式:
+	"""
+	{
+    		"Proxy":"192.168.0.29:8888",				# 代理服务器ip地址
+    		"ProxyBypass":"localhost;*.baidu.*;*.csdn.*", 	# 对设置的ip 绕行(忽略) 
+    		"AutoconfigUrl":"http://127.0.0.1:24325/pac?t=1676794227723",	
+    		"AutoDetect":false					# 自动检测
+	}
+
+	"""
+
+
+
+netsh winhttp set advproxy setting-scope=user settings=......
+	.........
+	
+========
+	以上的 操作都可以通过 设置注册表 来处理
+	对应路径
+		"HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" 
+
+	启动代理 		ProxyEnable
+	服务器ip端口 	ProxyServer 
+	忽略IP		ProxyOverride
+	

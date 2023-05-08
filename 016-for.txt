@@ -1,0 +1,24 @@
+在cmd窗口中：for %I in （command1） do command2
+在批处理文件中：for %%I in（command1）do command2
+
+FOR /d %variable IN (set) DO command [command-parameters]
+	如果集中包含通配符，则指定与目录名匹配，而不与文件名匹配。
+    	eg: for /d %i in (*) do echo %i
+	输出当前 文件夹名字
+	
+
+FOR /R [[drive:]path] %variable IN (set) DO command [command-parameters]
+    	eg: for /r %i in (*) do echo %i
+	递归 输出 文件夹内的文件(除 空文件夹)
+
+
+FOR /L %variable IN (start,step,end) DO command [command-parameters]
+	for循环
+
+eg：匹配当前全部文件 并循环输出它们的文件名
+for %i in (*.*) do echo %i
+
+
+注意: 在交互模式下使用 %variable; 在批处理文件里 使用 %variable%
+
+

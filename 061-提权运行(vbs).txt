@@ -1,0 +1,43 @@
+============ 
+
+@ECHO OFF
+chcp 65001
+setlocal EnableDelayedExpansion
+color 3e
+title 添加服务配置
+PUSHD %~DP0 & cd /d "%~dp0"
+REM 必要参数
+%1 %2
+mshta vbscript:createobject("shell.application").shellexecute("%~s0","goto :runas","","runas",1)(window.close)&goto :eof
+:runas
+::填写??的脚本
+start cmd
+@REM echo 执?完毕,任意键退出
+@REM pause >nul
+@REM exit
+
+================
+
+REM 直接得到管理员权限
+mshta vbscript:createobject("shell.application").shellexecute("cmd.exe","%~s0","","runas",1)(window.close)
+
+参数1		要执行的程序
+参数2		对应程序的参数
+参数3		
+参数4  	runas 管理员权限执行
+参数5		窗口大小，0 后台，1 小屏，2 任务栏， 3 全屏
+
+================
+
+setlocal EnableDelayedExpansion: 开启延迟变量扩展，以便支持使用 ! 符号引用变量。
+color 3e: 设置控制台的前景色和背景色
+
+PUSHD %~DP0 & cd /d "%~dp0": 将当前目录更改为脚本所在的目录。
+%1 %2: 运行传递给脚本的第一个和第二个参数。
+
+mshta vbscript:createobject("shell.application").shellexecute("%~s0","goto :runas","","runas",1)(window.close)&goto :eof: 使用 mshta 命令打开一个弹出窗口，提示用户以管理员身份运行脚本，并将用户授权之后的操作重定向到标签 :runas。
+:runas: 标签，等待填写命令行。
+
+start cmd: 打开一个新的命令行窗口。
+@REM echo 执?完毕,任意键退出: 提示用户操作已经完成，等待用户按下任意键退出。
+@REM pause >nul: 将 pause 命令输出到空设备，以便等待用户按下任意键退出

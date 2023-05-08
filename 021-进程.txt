@@ -1,0 +1,44 @@
+1.查看进程 tasklist命令
+tasklist /fi "imagename ne firefox" /fi "status eq running"
+上式命令 查看 当前火狐 相关的进程
+/fo:csv	输出内容为csv格式 		
+
+/fi 		表示筛选器（必须是双引号，必须用ne 对等相关进程）
+
+筛选器:
+关系运算符 == (或 eq )、 != (或 ne )、 < (或 lt )、 > (或 gt )、 <= (或 le )和 >= (或 ge )
+
+    筛选器名称     有效运算符           有效值
+    -----------     ---------------           --------------------------
+    STATUS          eq, ne                    RUNNING | SUSPENDED
+                                              NOT RESPONDING | UNKNOWN
+    IMAGENAME       eq, ne                    映像名称
+    PID             eq, ne, gt, lt, ge, le    PID 值
+    SESSION         eq, ne, gt, lt, ge, le    会话编号
+    SESSIONNAME     eq, ne                    会话名称
+    CPUTIME         eq, ne, gt, lt, ge, le    CPU 时间，格式为
+                                              hh:mm:ss。
+                                              hh - 小时，
+                                              mm - 分钟，ss - 秒
+    MEMUSAGE        eq, ne, gt, lt, ge, le    内存使用(以 KB 为单位)
+    USERNAME        eq, ne                    用户名，格式为
+                                              [域\]用户
+    "SERVICES        eq, ne                    服务名称
+    "WINDOWTITLE     eq, ne                    窗口标题
+    "模块         eq, ne                    DLL 名称
+
+
+2.杀死 进程  taskkill命令
+/f 		强制终止
+/pid		指定相关进程的id
+/im		指定相关进程的名字（映像名字）
+/fi		同上筛选器可使用通配符
+如:taskkill /fi "imagename eq msedge*" /fi "status eq running"
+可以使用通配符 但只能用于后面 imagename (映像名称) 必须要完整的
+也可以使用 tasklist | findstr /i "edge" 相关进程
+
+
+
+
+
+

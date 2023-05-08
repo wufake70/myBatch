@@ -1,0 +1,47 @@
+SSH 为 Secure Shell (安全壳协议)
+SSH 为建立在应用层基础上的安全协议。SSH 是较可靠，
+专为远程登录会话和其他网络服务提供安全性的协议。
+利用 SSH 协议可以有效防止远程管理过程中的信息泄露问题。SSH最初是UNIX系统上的一个程序，后来又迅速扩展到其他操作平台。SSH在正确使用时可弥补网络中的漏洞。SSH客户端适用于多种平台。几乎所有UNIX平台—包括HP-UX、Linux、AIX、Solaris、Digital UNIX、Irix，以及其他平台，都可运行SSH。
+
+
+可使用工具有 putty、 xshell(远程登录时 可以再cmd ping 一下 远程系统的ip 地址,判断是否可以链接)
+
+==========
+在 "C:\Windows\System32\OpenSSH" 也有 ssh.exe程序
+可以 通过cmd窗口 "ssh username@ip" 来远程链接 linux 服务器
+
+==========
+当然也可以通过 ssh.exe 远程链接window dos窗口
+
+配置:
+1.电脑上要运行 OpenSSH.Client(客户端，一般自带)、OpenSSH.Server(服务端，要下载，https://github.com/PowerShell/Win32-OpenSSH/releases)
+
+2.解压到C:\Program Files 并重命名为OpenSSH
+3.启动Window PowerShell 并进入 C:\Program Files\OpenSSH 目录
+4.输入命令安装sshd和ssh-agent服务
+	powershell -ExecutionPolicy Bypass -File install-sshd.ps1
+5.开启sshd，
+	net start sshd(dos命令 管理员运行)
+	sc config <service name> start= auto 开机自启服务（管理员权限）
+	,
+	Start-Service sshd(管理员powershell)	
+	Set-Service sshd -StartupType Automatic 开机自启
+
+
+常遇问题:
+	ssh: connect to host 192.168.88.130 port 22: Connection timed out
+		1.控制面板--》网络--》防火墙--》高级设置
+		2.入站规则--》新建规则--》规则类型: 端口 --》特定本地端口: 22
+		3.填入名称、描述 即可
+	
+	ssh: connect to host 192.168.88.130 port 22: Connection refused
+		使用ping 命令 查看是否可以 互相通信(通常不能)
+		虚拟机 网络适配器 网络连接 最好选择 桥接模式(直接链接物理网络)
+		也可能 端口 被占用了
+	sshd 切换端口
+
+	ssh 不能登录 linux时,"service sshd restart" 重启相关服务
+		
+	
+		
+		

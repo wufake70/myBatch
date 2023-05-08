@@ -1,0 +1,35 @@
+md /?
+创建目录。
+MKDIR [drive:]path
+MD [drive:]path
+如果命令扩展被启用，MKDIR 会如下改变:
+如果需要，MKDIR 会在路径中创建中级目录。例如: 假设 \a 不
+存在，那么:
+    mkdir \a\b\c\d
+与:
+    mkdir \a
+    chdir \a
+    mkdir b
+    chdir b
+    mkdir c
+    chdir c
+    mkdir d
+
+
+rd /?
+删除一个（空）目录。
+RMDIR [/S] [/Q] [drive:]path
+RD [/S] [/Q] [drive:]path
+    /S      除目录本身外，还将删除指定目录下的所有子目录和
+            文件。用于删除目录树。
+    /Q      安静模式，带 /S 删除目录树时不要求确认
+
+ren /?
+重命名文件（文件夹和文件）
+RENAME [drive:][path]filename1 filename2.
+REN [drive:][path]filename1 filename2.
+
+xcopy 
+复制文件和目录树。
+eg：将dos命令的文件夹复制到桌面上且重命名为d
+C:\Users\yui\Desktop\零散>xcopy dos命令 C:\Users\yui\Desktop\d  

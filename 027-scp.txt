@@ -1,0 +1,28 @@
+scp （ecure copy 安全复制）与远程系统(linux) 传输文件
+
+1.远程 linux ，查看ip （ifconfig）
+inet 192.168.159.134  就是该机的ip
+
+2.ubuntu 安装ssh(安全壳）
+sudo apt install openssh-server
+
+3.本地(windows） 传 远程(linux)
+scp【本地文件的路径】【服务器用户名】@【服务器地址】:【服务器上存放文件的路径】
+
+如:当前路径下5.jpg图片 传到 linux上
+scp ./5.jpg wufake@192.168.159.134:/home/wufake/桌面
+wufake@192.168.159.134's password: 		（注意：输入用户密码是看不见的）
+
+3.本地(windows) 下载 远程
+如: 下载 远程linux 的文件 到本机当前目录
+scp wufake@192.168.159.134:/home/wufake/install_package/pycharm-community-2022.1.2.tar.gz* ./
+
+4.如果传输的是文件夹，需要加上 -r (recurse 递归)
+scp root@node1:/root/dd C:\Users\yui\Desktop
+scp -r .\desktop\test root@node1:/root/
+
+5.指定某个端口 scp -P port username@ip:path  
+注意: linux 路径名严格区分大小写
+
+==============出现的问题:
+/etc/init.d/ssh restart			重启 ssh服务

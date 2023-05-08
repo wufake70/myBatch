@@ -1,0 +1,19 @@
+一、netsh 修改内网ip
+	1.修改 ip
+		netsh interface ip set address "wlan" static 192.168.0.180 255.255.255.0 192.168.0.1
+		netsh interface ip set address "VMware Network Adapter VMnet8" static 192.168.88.100 255.255.255.0 192.168.0.2
+		address 网络适配器名称
+		static IP地址 子网掩码 网关(是由 该设备确定的)
+		能修改 ip地址 范围 同网关一网段且除了网关 以外的ip
+		
+		使用 DHCP 服务器动态分配 IP 地址
+		netsh interface ip set address "Local Area Connection" dhcp		
+
+	2.修改 dns，需要加上 dns字段
+		netsh interface ip add dns "VMware Network Adapter VMnet8" 192.168.0.2 index=1
+		netsh interface ip add dns "wlan" 8.8.4.4 index=1
+		dns ip 可以同 网关一样，也可以是 8.8.8.8、8.8.4.4、114.114.114.114
+		index 范围 1、2
+		
+		使用 dhcp服务器 动态获取 dns服务器
+		netsh interface ip set dns "wlan" dhcp;

@@ -1,0 +1,48 @@
+一、schtasks 命令
+	创建任务 schtasks /create 
+	schtasks /create 
+	/tn "MyTask" /tr "C:\Users\yui\Desktop\1.bat" 
+	/sc daily /st 13:58
+		
+		/tn 任务名字
+		/tr 要运行的程序，命令
+		/st 开始时间 要有 /sc 参数
+		/et 结束时间
+
+	 schtasks /s window10 /u yui /p ****
+	 /create /tn "mytask" /tr "cmd" 
+	 /sc minute /mo 1 /st 14:44
+		/s 	表示远程系统名字(ip也行)
+		/u 	用户
+		/p 	密码
+		/ru 	username,以某个用户身份运行 
+		/sc 	schedule 指定频率
+		   	once 一次
+		   	month 每月
+		   	daily 每天
+			
+			/MO (modify)开关的有效值:
+    				MINUTE:  1 到 1439 分钟。
+  	  			HOURLY:  1 - 23 小时。
+    				DAILY:   1 到 365 天。
+    				WEEKLY:  1 到 52 周。
+    				ONCE:    无修改者。
+    				ONSTART: 无修改者。
+    				ONLOGON: 无修改者。
+    				ONIDLE:  无修改者。
+    				MONTHLY: 1 到 12，或
+		
+	
+	删除任务 schtasks /delete /tn 任务名
+
+	查询任务 schtasks /query /fo list | findstr /i taskname:
+
+	直接运行某个任务
+		schtasks /run /tn "MyTask"
+		远程执行某个脚本思路
+			先创建一个 定时任务 /sc once(只用执行一次)、/st 00:00(都可以)
+			直接运行他 schtasks /run /tn "MyTask"
+
+	终止某项任务(有些时候 任务出错要终止)
+		schtasks /edn /tn "..." 
+	

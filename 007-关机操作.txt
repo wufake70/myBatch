@@ -1,0 +1,5 @@
+shutdown /s  (关机）
+shutdown /a (注销命令)
+shutdown /r (重启）
+shutdown /i  (显示图形用户界面GUI）
+shutdown /s /t 定时关机 （也可定时重启）

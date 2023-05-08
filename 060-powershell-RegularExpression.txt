@@ -1,0 +1,24 @@
+一、测试
+	powershell "aa" -match "a" 		返回True/False
+	
+
+二、匹配文本 -match,-allmatch
+	测试的文本 使用命令 curl www.baidu.com -o 1.txt
+	
+	获取 所有含有 "baidu"的 url
+		含有 管道符
+		powershell "Get-Content .\1.txt 			# 读取文本
+		| Select-String -allmatch '[A-z]{0,}\.baidu\.\w{0,}' 	# 匹配文本,\w 表 匹配除标点符号外的字符
+									# -allmatches 匹配全部
+									# -pattern  匹配第一个 
+		| % { $_.Matches } | % { $_.Value } > 3.txt"		# 只获取匹配的内容 而不是整行
+						# %{ $_.Matches } 将每个匹配结果中的 Matches 属性提取出来
+						# %{ $_.Value } 将每个匹配结果中的 Value 属性提取出来
+		
+	
+	字符串替换 -replace,
+	将上面匹配到 所有内容全部替换成 "www.tencent.com"	
+		powershell (Get-Content .\1.txt) 	# 读取文本,这里括号不可少，replace只能操作字符串
+		-replace "\w{0,}\.baidu\.\w{0,}",	# 匹配规则
+		"`n`twww.tencent.com`n" > 2.txt 	# 替换成的内容，`n 换行符，`t 制表符
+

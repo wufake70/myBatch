@@ -1,0 +1,3 @@
+start /max notepad.exe 最大化打开记事本
+start /min  最小化
+start 可以多创建几个进程

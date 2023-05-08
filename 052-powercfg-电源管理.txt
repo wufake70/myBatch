@@ -1,0 +1,23 @@
+powercfg 
+	/l			列出所有电源方案
+	/X + id     	修改当前电源方案中的设置值
+	/D + id        	删除电源方案
+	/S + id		使系统上的电源方案处于活动状态。
+
+
+/x 的参数:
+	-ac 表示接通电源，-dc表示用电池，单位 分钟，0 表示永久
+    	monitor-timeout-ac	显示器
+    	monitor-timeout-dc
+
+    	disk-timeout-ac		磁盘
+    	disk-timeout-dc		
+
+    	standby-timeout-ac	待机,进入睡眠 状态(待机>=显示器)
+   	standby-timeout-dc
+
+    	hibernate-timeout-ac	休眠
+    	hibernate-timeout-dc
+
+
+

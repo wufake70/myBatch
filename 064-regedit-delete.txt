@@ -1,0 +1,8 @@
+一、删除 delete
+	reg delete "路径" /v ... /f
+		/v 	数据项的名称
+		/f	不提示直接删除
+
+	例子:
+	删除 启动代理的数据项
+		reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v proxyenable

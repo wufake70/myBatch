@@ -1,0 +1,1 @@
+if exist 001_快捷方式.bat (echo 11111111) else echo 2

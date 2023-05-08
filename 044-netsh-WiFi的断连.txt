@@ -1,0 +1,7 @@
+一、断开当前 wifi链接
+	netsh wlan disconnect
+
+二、连接 相应wifi
+	netsh wlan connect name=profiles ....
+		name		需要使用 show profiles 查看所有的配置文件，并填入对应一个
+

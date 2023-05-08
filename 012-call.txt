@@ -1,0 +1,14 @@
+call /?
+从批处理程序调用另一个批处理程序。
+
+:a 相当于函数； 你好 世界！是参数
+运行完:a后接着到pause
+eg：
+call :a 你好 世界！
+pause
+exit
+
+:a
+echo %1
+echo %2
+

@@ -1,0 +1,2 @@
+将 相关脚本 放在 以下 路径 即
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp (该路径被影藏)

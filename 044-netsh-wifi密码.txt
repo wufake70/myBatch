@@ -1,0 +1,5 @@
+查看 连接过的WIFI名称
+netsh wlan show profiles
+
+查看密码
+netsh wlan show profiles 对应的wifi名称 key=clear | findstr "Key Content"
