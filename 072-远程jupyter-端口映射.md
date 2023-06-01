@@ -26,7 +26,7 @@
     --allow-root    允许root用户运行jupyter
 
 ## 本地远程jupyter
-* `ssh -CNgv -L 8889:127.0.0.1:8889 root:gx-xds-rdp.songmao-idc.com -p 54010`
+* `ssh -CNgv -L 8889:127.0.0.1:8889 root@gx-xds-rdp.songmao-idc.com -p 54010`
 
 * 这是一个SSH命令，用于建立一个到远程服务器的SSH连接。下面是每个参数的解释：
 
