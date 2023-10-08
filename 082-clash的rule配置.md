@@ -1,4 +1,4 @@
-# clash 的rule配置
+# clash中rule配置
 ```
 rules:
     - DOMAIN,api.yuansu.app,DIRECT
@@ -3282,3 +3282,5 @@ rules:
     - IP-CIDR,101.199.196.0/22,🎯 全球直连,no-resolve
     - GEOIP,CN,🎯 全球直连
     - MATCH,🐟 漏网之鱼
+
+```
