@@ -14,7 +14,7 @@ pause > nul
 exit
 
 :GoToGit
-start https://github.com/wufake70/myBatch
+start https://github.com/wufake70/myBatch.git
 color 7
 pause > nul
 exit
