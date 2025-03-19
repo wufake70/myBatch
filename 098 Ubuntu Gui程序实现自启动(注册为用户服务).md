@@ -72,7 +72,9 @@ GUI 程序注册为系统服务时无法启动，主要有以下几个原因：
 
      [Service]
      ExecStart=/path/to/your/gui-program
-     Restart=on-failure
+     Restart=on-failure  # 启动失败，继续启动
+                         # on-success，启动成功后，正常退出后，继续启动
+                         # always，无论是正常启动，还是启动失败，都会继续启动
      Environment="DISPLAY=:0"  # 根据需要设置显示环境变量
 
      [Install]
